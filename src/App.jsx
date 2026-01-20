@@ -205,7 +205,7 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-between min-h-[80vh] py-8"
+              className="flex flex-col items-center justify-start gap-4 sm:gap-8 py-4 sm:py-8"
             >
               {/* ═══ LOGO ═══ */}
               <motion.div
@@ -238,7 +238,7 @@ function App() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="text-center mt-12 mb-12"
+                className="text-center mt-4 mb-4 sm:mt-12 sm:mb-12 hidden sm:block"
               >
                 <p
                   className="text-base sm:text-xl md:text-2xl lg:text-3xl slogan-text font-medium px-4"
@@ -253,7 +253,7 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-                className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-10 mb-8 sm:mb-16"
+                className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-10 mb-4 sm:mb-16"
               >
                 {levels.map((level, index) => (
                   <motion.button
@@ -321,7 +321,7 @@ function App() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6, type: "spring", stiffness: 150 }}
-                className="w-full max-w-xl mt-4 sm:mt-8 px-4"
+                className="w-full max-w-xl mt-2 sm:mt-8 px-4"
               >
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -358,36 +358,36 @@ function App() {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 w-full"
+                className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 w-full"
               >
                 {/* SÜRE - Red */}
-                <div className="neon-box neon-box-red text-center min-w-[70px] sm:min-w-[90px]">
-                  <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">Süre</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                <div className="neon-box neon-box-red text-center min-w-[80px] sm:min-w-[100px]">
+                  <p className="box-label text-[10px] sm:text-xs uppercase tracking-wider font-bold mb-1">Süre</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {formatTime(elapsedTime)}
                   </p>
                 </div>
 
                 {/* DOĞRU - Green */}
-                <div className="neon-box neon-box-green text-center min-w-[70px] sm:min-w-[90px]">
-                  <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">Doğru</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                <div className="neon-box neon-box-green text-center min-w-[80px] sm:min-w-[100px]">
+                  <p className="box-label text-[10px] sm:text-xs uppercase tracking-wider font-bold mb-1">Doğru</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {correct}
                   </p>
                 </div>
 
                 {/* YANLIŞ - Orange */}
-                <div className="neon-box neon-box-orange text-center min-w-[70px] sm:min-w-[90px]">
-                  <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">Yanlış</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                <div className="neon-box neon-box-orange text-center min-w-[80px] sm:min-w-[100px]">
+                  <p className="box-label text-[10px] sm:text-xs uppercase tracking-wider font-bold mb-1">Yanlış</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {incorrect}
                   </p>
                 </div>
 
                 {/* WPM - Blue */}
-                <div className="neon-box neon-box-blue text-center min-w-[70px] sm:min-w-[90px]">
-                  <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">WPM</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                <div className="neon-box neon-box-blue text-center min-w-[80px] sm:min-w-[100px]">
+                  <p className="box-label text-[10px] sm:text-xs uppercase tracking-wider font-bold mb-1">WPM</p>
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {calculateWPM()}
                   </p>
                 </div>
@@ -462,14 +462,9 @@ function App() {
                 />
               </motion.div>
 
-              {/* ═══ MOBILE ACTION BUTTONS ═══ */}
-              <div className="flex items-center justify-center gap-3 mt-4 sm:hidden">
-                <button
-                  onClick={handleHint}
-                  className="px-4 py-2 rounded-xl bg-[#FFE66D]/20 border-2 border-[#FFE66D] text-[#FFE66D] font-bold text-sm active:scale-95 transition-transform"
-                >
-                  💡 İPUCU
-                </button>
+              {/* ═══ MOBILE ACTION AREA ═══ */}
+              <div className="flex flex-col items-center gap-2 mt-4 sm:hidden">
+                <p className="text-[#FFE66D] text-xs">💡 İpucu için <span className="font-bold">⇧ SHIFT</span> tuşuna bas</p>
                 <button
                   onClick={handleBackToMenu}
                   className="px-4 py-2 rounded-xl bg-[#FF6B6B]/20 border-2 border-[#FF6B6B] text-[#FF6B6B] font-bold text-sm active:scale-95 transition-transform"
