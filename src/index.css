@@ -512,3 +512,135 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+/* Small phones (< 375px) */
+@media (max-width: 374px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .neon-box {
+    padding: 0.5rem 0.75rem;
+    min-width: 70px !important;
+  }
+  
+  .neon-box p.text-3xl {
+    font-size: 1.25rem;
+  }
+  
+  .kbd {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+    min-width: 40px;
+  }
+}
+
+/* Mobile devices (< 640px) */
+@media (max-width: 639px) {
+  /* Reduce padding on main */
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Smaller neon boxes on mobile */
+  .neon-box {
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+  }
+  
+  .neon-box p.text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .neon-box .box-label {
+    font-size: 0.6rem;
+  }
+  
+  /* Smaller input on mobile */
+  .neon-input {
+    font-size: 1.25rem !important;
+    padding: 1rem 1rem !important;
+    border-radius: 12px;
+  }
+  
+  /* Keyboard shortcuts - compact */
+  .kbd {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+    min-width: 45px;
+  }
+  
+  /* Glass card adjustments */
+  .glass-card {
+    padding: 0.75rem;
+  }
+  
+  /* Hero button mobile */
+  .hero-button {
+    border-radius: 12px;
+  }
+}
+
+/* Tablet and up adjustments */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .neon-box {
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .glass-card {
+    min-height: 100px;
+  }
+  
+  /* Disable hover effects on touch */
+  .glass-card:hover {
+    transform: none;
+  }
+  
+  /* Active states instead of hover */
+  .glass-card:active {
+    transform: scale(0.98);
+    border-color: var(--neon-cyan);
+  }
+  
+  .hero-button:hover {
+    transform: none;
+  }
+  
+  .hero-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Better input for mobile */
+  input {
+    font-size: 16px !important; /* Prevents iOS zoom */
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  main {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding-top: env(safe-area-inset-top)) {
+  main {
+    padding-top: calc(1rem + env(safe-area-inset-top));
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    padding-left: calc(1rem + env(safe-area-inset-left));
+    padding-right: calc(1rem + env(safe-area-inset-right));
+  }
+}

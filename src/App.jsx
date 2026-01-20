@@ -215,7 +215,7 @@ function App() {
                 className="text-center"
               >
                 <h1
-                  className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter"
+                  className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter"
                   style={{ fontFamily: "'Orbitron', sans-serif" }}
                 >
                   <span className="neon-coral">En</span>
@@ -226,7 +226,7 @@ function App() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.6 }}
-                  className="mt-2 text-lg md:text-xl tracking-[0.3em] uppercase shimmer-text"
+                  className="mt-2 text-sm sm:text-base md:text-xl tracking-[0.2em] sm:tracking-[0.3em] uppercase shimmer-text"
                   style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 300 }}
                 >
                   Refleks İngilizce
@@ -241,7 +241,7 @@ function App() {
                 className="text-center mt-12 mb-12"
               >
                 <p
-                  className="text-xl md:text-2xl lg:text-3xl slogan-text font-medium"
+                  className="text-base sm:text-xl md:text-2xl lg:text-3xl slogan-text font-medium px-4"
                   style={{ fontFamily: "'Rajdhani', sans-serif" }}
                 >
                   {slogans[Math.floor(Math.random() * slogans.length)]}
@@ -253,7 +253,7 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-                className="flex flex-wrap justify-center gap-6 md:gap-10 mb-16"
+                className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-10 mb-8 sm:mb-16"
               >
                 {levels.map((level, index) => (
                   <motion.button
@@ -264,12 +264,12 @@ function App() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setSelectedLevel(level.id)}
-                    className={`glass-card group relative w-28 h-36 md:w-32 md:h-40 flex flex-col items-center justify-center cursor-pointer ${
+                    className={`glass-card group relative w-20 h-28 sm:w-28 sm:h-36 md:w-32 md:h-40 flex flex-col items-center justify-center cursor-pointer ${
                       selectedLevel === level.id ? "selected" : ""
                     }`}
                   >
                     <span
-                      className={`text-4xl md:text-5xl font-bold tracking-tight transition-all duration-300 ${
+                      className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight transition-all duration-300 ${
                         selectedLevel === level.id
                           ? "text-[#4ECDC4]"
                           : "text-[#8b9cb5] group-hover:text-[#f0f0f0]"
@@ -321,14 +321,14 @@ function App() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.6, type: "spring", stiffness: 150 }}
-                className="w-full max-w-xl mt-8"
+                className="w-full max-w-xl mt-4 sm:mt-8 px-4"
               >
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleStart}
                   disabled={!selectedLevel}
-                  className={`w-full py-7 text-3xl md:text-4xl font-black tracking-wider uppercase ${
+                  className={`w-full py-5 sm:py-7 text-xl sm:text-2xl md:text-4xl font-black tracking-wider uppercase ${
                     selectedLevel
                       ? "hero-button text-white cursor-pointer"
                       : "hero-button-disabled text-[#4a5568] rounded-2xl"
@@ -358,36 +358,36 @@ function App() {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex flex-wrap justify-center gap-4 md:gap-6 w-full"
+                className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 w-full"
               >
                 {/* SÜRE - Red */}
-                <div className="neon-box neon-box-red text-center min-w-[90px]">
+                <div className="neon-box neon-box-red text-center min-w-[70px] sm:min-w-[90px]">
                   <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">Süre</p>
-                  <p className="text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {formatTime(elapsedTime)}
                   </p>
                 </div>
 
                 {/* DOĞRU - Green */}
-                <div className="neon-box neon-box-green text-center min-w-[90px]">
+                <div className="neon-box neon-box-green text-center min-w-[70px] sm:min-w-[90px]">
                   <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">Doğru</p>
-                  <p className="text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {correct}
                   </p>
                 </div>
 
                 {/* YANLIŞ - Orange */}
-                <div className="neon-box neon-box-orange text-center min-w-[90px]">
+                <div className="neon-box neon-box-orange text-center min-w-[70px] sm:min-w-[90px]">
                   <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">Yanlış</p>
-                  <p className="text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {incorrect}
                   </p>
                 </div>
 
                 {/* WPM - Blue */}
-                <div className="neon-box neon-box-blue text-center min-w-[90px]">
+                <div className="neon-box neon-box-blue text-center min-w-[70px] sm:min-w-[90px]">
                   <p className="box-label text-xs uppercase tracking-wider font-bold mb-1">WPM</p>
-                  <p className="text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                     {calculateWPM()}
                   </p>
                 </div>
@@ -399,10 +399,10 @@ function App() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="text-center my-12"
+                className="text-center my-6 sm:my-12"
               >
                 <h2
-                  className={`text-7xl md:text-8xl lg:text-9xl font-black tracking-tight ${
+                  className={`text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight ${
                     isSuccess ? "neon-cyan" : isError ? "" : "giant-word"
                   }`}
                   style={{ 
@@ -439,7 +439,7 @@ function App() {
               <motion.div
                 animate={isError ? { x: [-10, 10, -10, 10, 0] } : { x: 0 }}
                 transition={{ duration: 0.4 }}
-                className="w-full max-w-lg"
+                className="w-full max-w-lg px-4"
               >
                 <input
                   type="text"
@@ -451,7 +451,7 @@ function App() {
                   autoComplete="off"
                   autoCorrect="off"
                   spellCheck="false"
-                  className={`w-full text-center text-3xl py-5 px-6 outline-none ${
+                  className={`w-full text-center text-xl sm:text-2xl md:text-3xl py-4 sm:py-5 px-4 sm:px-6 outline-none ${
                     isError
                       ? "neon-input neon-input-error"
                       : isSuccess
@@ -467,7 +467,7 @@ function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="flex items-center justify-center gap-6 md:gap-10 mt-8"
+                className="flex items-center justify-center gap-3 sm:gap-6 md:gap-10 mt-6 sm:mt-8 flex-wrap"
               >
                 <div className="flex items-center gap-2">
                   <span className="kbd kbd-blue">ENTER</span>
