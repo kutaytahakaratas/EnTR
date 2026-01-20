@@ -38,6 +38,9 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  background: var(--bg-deep);
+  height: 100%;
+  height: -webkit-fill-available;
 }
 
 body {
@@ -45,15 +48,22 @@ body {
   background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-navy) 50%, var(--bg-slate) 100%);
   color: var(--text-primary);
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent pull-to-refresh */
+  overscroll-behavior: none;
+  /* Fixed background */
+  background-attachment: fixed;
 }
 
 #root {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
+  background: transparent;
 }
 
 /* Custom Selection */

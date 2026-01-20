@@ -352,7 +352,7 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center w-full max-w-3xl min-h-[70vh] justify-between py-8"
+              className="flex flex-col items-center w-full max-w-3xl gap-4 sm:gap-6 py-4 sm:py-8"
             >
               {/* ═══ NEON SCOREBOARD ═══ */}
               <motion.div
