@@ -158,7 +158,7 @@ function App() {
       if (inputValue.trim()) {
         handleSubmit();
       }
-    } else if (e.key === "Tab") {
+    } else if (e.key === "Tab" || e.key === "Shift") {
       e.preventDefault();
       handleHint();
     } else if (e.key === "Escape") {
@@ -462,12 +462,28 @@ function App() {
                 />
               </motion.div>
 
-              {/* ═══ KEYBOARD SHORTCUTS ═══ */}
+              {/* ═══ MOBILE ACTION BUTTONS ═══ */}
+              <div className="flex items-center justify-center gap-3 mt-4 sm:hidden">
+                <button
+                  onClick={handleHint}
+                  className="px-4 py-2 rounded-xl bg-[#FFE66D]/20 border-2 border-[#FFE66D] text-[#FFE66D] font-bold text-sm active:scale-95 transition-transform"
+                >
+                  💡 İPUCU
+                </button>
+                <button
+                  onClick={handleBackToMenu}
+                  className="px-4 py-2 rounded-xl bg-[#FF6B6B]/20 border-2 border-[#FF6B6B] text-[#FF6B6B] font-bold text-sm active:scale-95 transition-transform"
+                >
+                  ✕ ÇIKIŞ
+                </button>
+              </div>
+
+              {/* ═══ DESKTOP KEYBOARD HINTS ═══ */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="flex items-center justify-center gap-3 sm:gap-6 md:gap-10 mt-6 sm:mt-8 flex-wrap"
+                className="hidden sm:flex items-center justify-center gap-6 md:gap-10 mt-6"
               >
                 <div className="flex items-center gap-2">
                   <span className="kbd kbd-blue">ENTER</span>
