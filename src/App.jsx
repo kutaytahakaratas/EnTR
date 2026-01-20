@@ -205,14 +205,14 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-start gap-4 sm:gap-8 py-4 sm:py-8"
+              className="flex flex-col items-center justify-center gap-6 sm:gap-10 py-6 sm:py-10"
             >
               {/* ═══ LOGO ═══ */}
               <motion.div
                 initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-center"
+                className="text-center mb-4 sm:mb-0"
               >
                 <h1
                   className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter"
@@ -253,7 +253,7 @@ function App() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-                className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-10 mb-4 sm:mb-16"
+                className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10 mt-4 sm:mt-0"
               >
                 {levels.map((level, index) => (
                   <motion.button
